@@ -15,7 +15,7 @@ describe("random pick test", function() {
     const epsilion = 0.0001 ;
     const limit = 100000000;
       
-    it("epsilion between ", function() {
+    it("gap between result percentage and actual percentage should be smaller than epsilion", function() {
         for (var i = 0; i < limit; i++) {
             var dict2 = Object.assign({}, dict);
             var r = random_pick(dict2);

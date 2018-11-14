@@ -13,21 +13,3 @@ function random_pick(dict) {
         }
     }
 }
-
-
-var dict = {
-    "a": 2,
-    "b": 3,
-    "c": 5
-};
-var stats = {
-    "a": 0,
-    "b": 0,
-    "c": 0
-};
-for (var i = 0; i < 100000000; i++) {
-    var dict2 = Object.assign({}, dict);
-    var r = random_pick(dict2);
-    stats[r]++;
-}
-console.log(stats)
