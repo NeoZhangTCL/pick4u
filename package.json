@@ -9,9 +9,6 @@
     "eject": "expo eject",
     "test": "mocha"
   },
-  "jest": {
-    "preset": "jest-expo"
-  },
   "dependencies": {
     "@expo/samples": "2.1.1",
     "expo": "^31.0.2",
@@ -23,7 +20,6 @@
     "babel-preset-expo": "^5.0.0",
     "chai": "^4.2.0",
     "expo-cli": "^2.3.8",
-    "jest-expo": "^31.0.0",
     "mocha": "^5.2.0"
   }
 }
