@@ -1,27 +1,25 @@
-const _test = require('tap').test;
-const _Search = require('../src/search_yelp');
+var _Search = require('../src/search_yelp');
+var assert = require('chai').assert;
 
-_test('test search function', assert =>{
-    const SearchYelp = _Search();
+describe('Yelpsearch test', () => {
+    const SearchYelp = new _Search();
+
+    afterEach(() => {
+        SearchYelp.clearPara();
+    });
     
-    SearchYelp.doSearch().then(response => {
-        assert.true(response.jsonBody.businesses);
-        assert.end();
-      }).catch(e =>{
-        assert.fail(e);
-      });
-
-
-    SearchYelp.clearPara();
-    SearchYelp.addPara('radius','100');
-
-    SearchYelp.doSearch().then(response => {
-        assert.true(response.jsonBody.businesses);
-        assert.end();
-      }).catch(e =>{
-        assert.fail(e);
-      });
-
-
-    assert.end();
-  });
+    it("Test with default parameters: ", () =>{
+        return SearchYelp.doSearch().then(response => {
+            console.log("first attemp total: " + response.jsonBody.total)
+            assert.isAtLeast(response.jsonBody.total,600,'> 100 coerces values to strings');
+        });
+    });
+    
+    it("Test with default parameters: ", () =>{
+        SearchYelp.addPara('radius','100');
+        return SearchYelp.doSearch().then(response => {
+            console.log("Second attemp total: " + response.jsonBody.total)
+            assert.isAtLeast(response.jsonBody.total,2,'> 2 coerces values to strings');
+        });
+    });
+});
