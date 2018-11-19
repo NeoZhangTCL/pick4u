@@ -1,4 +1,4 @@
-var rp = require('../lib/random_pick');
+var rp = require('../src/random_pick');
 var assert = require('chai').assert;
 
 describe("random pick test", () => {
