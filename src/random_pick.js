@@ -1,4 +1,6 @@
-function random_pick(dict) {
+// random_pick.js
+
+module.exports = function(dict) {
     var weight = 0;
     var rest;
     for (rest in dict) {
