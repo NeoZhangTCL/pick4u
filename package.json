@@ -17,9 +17,11 @@
     "react-navigation": "^2.18.2"
   },
   "devDependencies": {
+    "@tonybadguy/call-me-maybe": "^2.1.1",
     "babel-preset-expo": "^5.0.0",
     "chai": "^4.2.0",
     "expo-cli": "^2.3.8",
+    "express": "^4.16.4",
     "mocha": "^5.2.0"
   }
 }
